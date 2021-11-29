@@ -6,19 +6,19 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class RegistrationNotification extends Notification
+class JobAppliedNotification extends Notification
 {
     use Queueable;
-    private $user;
+    private $data;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct($data)
     {
-        $this->user = $user;
+        $this->data=$data;
     }
 
     /**
@@ -40,9 +40,12 @@ class RegistrationNotification extends Notification
      */
     public function toMail($notifiable)
     {
+        $url = "https://jobmalai.com/job-detail/" . $this->data["job_id"];
+
         return (new MailMessage)
-            ->line('Welcome ' . $this->user->name . ' to JobMalai. Your dream Job Finder.')
-            ->action('Complete your profile ', url('http://localhost:8080/login'))
+
+            ->line('Dear ' . $this->data["jobseeker_name"]. ' You have applied the ' . $this->data["job_title"] . ' Job. Please be in touch to get response from the employer.')
+            ->action('Show Job', url($url))
             ->line('Thank you for using our application!');
     }
 
@@ -52,11 +55,12 @@ class RegistrationNotification extends Notification
      * @param  mixed  $notifiable
      * @return array
      */
-   
     public function toArray($notifiable)
     {
         return [
-           'message'=> 'Hello ' . $this->user->name . ' Thankyou for joining JobMalai. Please Complete your profile to improve the change of application acceptance.',
+
+            'message' => 'Dear ' . $this->data["jobseeker_name"]. ' You have applied the ' . $this->data["job_title"] . ' Job. Please be in touch to get response from the employer.'
         ];
+
     }
 }
