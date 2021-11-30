@@ -1,5 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\App;
+use App\Models\Employer;
+use App\Models\Jobseeker;
+use App\Models\Admin;
+
 return [
 
     /*
@@ -14,7 +19,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'jobseeker',
         'passwords' => 'users',
     ],
 
@@ -31,7 +36,7 @@ return [
     | users are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
     |
-    | Supported: "session"
+    | Supported: "session", "token"
     |
     */
 
@@ -40,6 +45,25 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'api' => [
+            'driver' => 'passport',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+        'admin' => [
+            'driver' => 'passport',
+            'provider' => 'admin',
+        ],
+        'jobseeker' => [
+            'driver' => 'passport',
+            'provider' => 'jobseeker',
+        ],
+        'employer' => [
+            'driver' => 'passport',
+            'provider' => 'employer',
+        ],
+
     ],
 
     /*
@@ -60,15 +84,30 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Models\User::class,
+        // ],
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'admin'=>[
+            'driver' => 'eloquent',
+            'model' => Admin::class,
+        ],
+        'jobseeker'=>[
+            'driver' => 'eloquent',
+            'model' => Jobseeker::class,
+        ],
+        'employer'=>[
+            'driver'=>'eloquent',
+            'model'=> Employer::class,
+        ],
+
+
     ],
 
     /*
