@@ -1,6 +1,15 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\AdminController;
+use App\Http\Controllers\Api\ApplicationController;
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\EmployerController;
+use App\Http\Controllers\Api\JobController;
+use App\Http\Controllers\Api\JobseekerController;
+use App\Http\Controllers\Api\VerificationController;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 
 Route::group(['prefix' => 'v1'], function () {
 
@@ -168,7 +177,7 @@ Route::group(['prefix' => 'v1'], function () {
 
         Route::group(['middleware' => ['auth:employer', 'scope:employer']], function () {
             // authenticated Employer routes here
-            // authenticated job routes here
+            // authenticated jobseeker routes here
             Route::post('info', [EmployerController::class, 'info']);
             
             Route::post('updateinfo', [EmployerController::class, 'updateinfo']);
