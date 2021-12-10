@@ -22,11 +22,8 @@ Axios.defaults.headers.common = {
     Accept: "application/json"
 };
 
-Axios.defaults.baseURL = "https://jobmalai.test/api/v1/";
+Axios.defaults.baseURL = "http://localhost:8000/api/v1/";
 
-// const instance = Axios.create({
-//   baseURL: "https://jobmalai.test/api/v1/",
-// });
 Vue.prototype.$http = Axios;
 //axios config
 //end of axios

@@ -21,7 +21,7 @@ class VerificationController extends Controller
         if (!$user) {
             return response()->json([
                 'title' => 'This activation token is invalid.',
-                'description' => 'Please contact JobMalai Technical team for help.',
+                'description' => 'Please contact Jobly Technical team for help.',
 
             ], 404);
         }

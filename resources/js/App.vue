@@ -67,7 +67,7 @@
                 variant="top-nav"
                 v-if="getUser.name && getUser.type == 'admin'"
             >
-                <b-navbar-brand href="#">JobMalai</b-navbar-brand>
+                <b-navbar-brand href="#">Jobly</b-navbar-brand>
                 <b-collapse id="nav-collapse" is-nav>
                     <!-- Right aligned nav items -->
                     <b-navbar-nav class="ml-auto">

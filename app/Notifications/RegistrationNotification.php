@@ -56,7 +56,7 @@ class RegistrationNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-           'message'=> 'Hello ' . $this->user->name . ' Thankyou for joining JobMalai. Please Complete your profile to improve the change of application acceptance.',
+           'message'=> 'Hello ' . $this->user->name . ' Thankyou for joining Jobly. Please Complete your profile to improve the change of application acceptance.',
         ];
     }
 }

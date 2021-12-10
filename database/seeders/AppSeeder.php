@@ -18,8 +18,8 @@ class AppSeeder extends Seeder
             
         	'app_name' => 'Jobly',
         	'app_slogan' => 'get your dream Job',
-        	'app_icon' => 'http:://jobmalai.test/logo.ico',
-        	'app_logo' => 'http:://jobmalai.test/logo.png',
+        	'app_icon' => 'http://localhost:8000/logo.ico',
+        	'app_logo' => 'http://localhost:8000/logo.png',
         	'address' => 'Beirut, Lebanon',
         	'phone' => '+961 78890304',
         	'mobile' => ' +961 78890304',
