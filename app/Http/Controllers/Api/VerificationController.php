@@ -32,7 +32,7 @@ class VerificationController extends Controller
             $user->notify(new RegistrationNotification($user));
 
             return response()->json([
-                'title' => 'Succefully verified',
+                'title' => 'Succesfully verified',
                 'description' => 'Dear ' . $user->name . ' Please login to your profile and complete it.!',
             ], 200);
         }

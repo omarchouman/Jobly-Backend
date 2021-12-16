@@ -68,7 +68,7 @@ class AuthController extends Controller
 
         $user->notify(new PasswordResetNotification($user));
 
-        return response()->json(['message' => 'We have sent password reset link to your email. Please check inbox otherwise will expires soon!!'], 200);
+        return response()->json(['message' => 'We have sent the password reset link to your email. Please check your inbox before the email expires!!'], 200);
     }
     public function newPassword(Request $request)
     {
