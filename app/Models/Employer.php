@@ -33,6 +33,26 @@ class Employer extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $fillable = [
+        'name', 
+        'address',
+        'slogan',
+        'description',
+        'email',
+        'password',
+        'profile_image',
+        'company_type',
+        'technologies_using',
+        'isVerified',
+        'phone',
+        'website',
+        'status',
+        'facebook', 'twitter', 'youtube', 'github',
+        'views',
+        'isFeatured',
+        'active'
+    ];
+
     public function jobs()
     {
         return $this->hasMany('\App\Models\Job');

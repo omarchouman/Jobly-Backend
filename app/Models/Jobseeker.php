@@ -22,6 +22,27 @@ class Jobseeker extends Authenticatable
         // 'last_login',
     ];
 
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'profile_image',
+        'resume_file',
+        'cover_letter',
+        'gender',
+        'skills',
+        'qualification',
+        'title',
+        'address',
+        'phone',
+        'website',
+        'status',
+        'facebook', 'twitter','youtube', 'github',
+        'views',
+        'isFeatured',
+        'active'
+    ];
+
     /**
      * The attributes that should be cast to native types.
      *
