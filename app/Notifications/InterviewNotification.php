@@ -40,7 +40,7 @@ class InterviewNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->line('Dear ' . $this->data["jobseeker_name"] . ' be ready for interview for the following time.')
+            ->line('Dear ' . $this->data["jobseeker_name"] . ' be ready for your upcoming interview interview at.')
             ->line('Venue: ' . $this->data["venue"])
             ->line('Date: ' . $this->data["date"])
             ->line('Time: ' . $this->data["time"])
@@ -58,7 +58,7 @@ class InterviewNotification extends Notification
     public function toArray($notifiable)
     {
         return [
-            'message'=> 'Dear ' . $this->data["jobseeker_name"] . ' be ready for interview for the following time. Venue : ' .$this->data["venue"] .' Date : ' .$this->data["date"] .' Time : ' .$this->data["time"] .' Note : ' .$this->data["note"],
+            'message'=> 'Dear ' . $this->data["jobseeker_name"] . ' be ready for interview for your upcoming interview at. Venue : ' .$this->data["venue"] .' Date : ' .$this->data["date"] .' Time : ' .$this->data["time"] .' Note : ' .$this->data["note"],
              
          ];
     }
