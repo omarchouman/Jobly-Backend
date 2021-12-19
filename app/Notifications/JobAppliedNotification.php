@@ -44,7 +44,7 @@ class JobAppliedNotification extends Notification
 
         return (new MailMessage)
 
-            ->line('Dear ' . $this->data["jobseeker_name"]. ' You have applied the ' . $this->data["job_title"] . ' Job. Please be in touch to get response from the employer.')
+            ->line('Dear ' . $this->data["jobseeker_name"]. ' You have applied for the ' . $this->data["job_title"] . ' Job. Please be in touch to get response from the employer.')
             ->action('Show Job', url($url))
             ->line('Thank you for using our application!');
     }
@@ -59,7 +59,7 @@ class JobAppliedNotification extends Notification
     {
         return [
 
-            'message' => 'Dear ' . $this->data["jobseeker_name"]. ' You have applied the ' . $this->data["job_title"] . ' Job. Please be in touch to get response from the employer.'
+            'message' => 'Dear ' . $this->data["jobseeker_name"]. ' You have applied for the ' . $this->data["job_title"] . ' Job. Please be in touch to get response from the employer.'
         ];
 
     }

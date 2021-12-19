@@ -133,12 +133,12 @@ Route::group(['prefix' => 'v1'], function () {
 
     Route::group(['prefix' => 'jobseeker'], function () {
 
+        //unauthenticated routes for jobseeker here
         Route::post('register', [JobseekerController::class, 'register']);
 
         Route::post('login', [JobseekerController::class, 'login']);
 
-        //unauthenticated routes for jobseeker here
-
+        
         Route::group(['middleware' => ['auth:jobseeker', 'scope:jobseeker', 'cors']], function () {
             // authenticated jobseeker routes here
             Route::post('info', [JobseekerController::class, 'info']);
@@ -177,7 +177,7 @@ Route::group(['prefix' => 'v1'], function () {
 
         Route::group(['middleware' => ['auth:employer', 'scope:employer']], function () {
             // authenticated Employer routes here
-            // authenticated jobseeker routes here
+            // authenticated job routes here
             Route::post('info', [EmployerController::class, 'info']);
             
             Route::post('updateinfo', [EmployerController::class, 'updateinfo']);
