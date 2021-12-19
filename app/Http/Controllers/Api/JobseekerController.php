@@ -32,7 +32,7 @@ class JobseekerController extends Controller
     
             $jobseeker->save();
             if (!$jobseeker) {
-                return response()->json(['message' => 'Failed loading jobseeker'], 500);
+                return response()->json(['message' => 'Failed loading the jobseeker'], 500);
             }
         }
       
@@ -113,9 +113,9 @@ class JobseekerController extends Controller
         $jobseeker->gender = $request->gender;
       
         if ($jobseeker->save()) {
-            return response()->json(['message' => 'Successful updated data', 'status' => 'success']);
+            return response()->json(['message' => 'You have successfully updated the data', 'status' => 'success']);
         } else {
-            return response()->json(['message' => 'Failed to update data'], 500);
+            return response()->json(['message' => 'Failed to update the data'], 500);
         }
     }
     public function register(Request $request)
@@ -148,9 +148,9 @@ class JobseekerController extends Controller
             $jobseeker->notify(new VerificationNotification($jobseeker));
             $jobseeker->notify(new RegistrationNotification($jobseeker));
 
-            return response()->json(['message' => 'Jobseeker acount created', 'user' => $jobseeker]);
+            return response()->json(['message' => 'Jobseeker account created', 'user' => $jobseeker]);
         } else {
-            return response()->json(['Some error occured while creating JobSeeker']);
+            return response()->json(['Some error occured while creating a JobSeeker']);
         }
     }
     public function login(Request $request)
@@ -242,10 +242,10 @@ class JobseekerController extends Controller
             $jobseeker->resume_file = $baseurl . '/jobseeker/files/' . $name;
         }
         if ($jobseeker->save()) {
-            return response()->json(['data' => $jobseeker->resume_file,'message'=>'You have succesfully upload Resume']);
+            return response()->json(['data' => $jobseeker->resume_file,'message'=>'You have succesfully uploaded your Resume']);
 
         }
-        return response()->json(['message' => "Some error occured while uploading file."], 500);
+        return response()->json(['message' => "Some error occured while uploading the file."], 500);
     }
     public function updateProfileImage(Request $request){
         $validated = $request->validate([
@@ -265,9 +265,9 @@ class JobseekerController extends Controller
         }
 
         if ($jobseeker->save()) {
-            return response()->json(['data' => $jobseeker->profile_image,'message'=>'You have succesfully uploaded Image']);
+            return response()->json(['data' => $jobseeker->profile_image,'message'=>'You have succesfully uploaded your Image']);
 
         }
-        return response()->json(['message' => "Some error occured while uploading Image."], 500);
+        return response()->json(['message' => "Some error occured while uploading the Image."], 500);
     }
 }

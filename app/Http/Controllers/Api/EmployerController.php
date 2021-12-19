@@ -170,7 +170,7 @@ class EmployerController extends Controller
             
             $employer->notify(new RegistrationNotification($employer));
 
-            return response()->json(['message' => 'Employer acount created', 'user' => $employer]);
+            return response()->json(['message' => 'Employer account created', 'user' => $employer]);
         } else {
             return response()->json(['Some error occured while creating Employer']);
         }
@@ -293,9 +293,9 @@ class EmployerController extends Controller
         }
 
         if ($employer->save()) {
-            return response()->json(['data' => $employer->profile_image, 'message' => 'You have succesfully uploaded Image']);
+            return response()->json(['data' => $employer->profile_image, 'message' => 'You have succesfully uploaded your Image']);
 
         }
-        return response()->json(['message' => "Some error occured while uploading Image."], 500);
+        return response()->json(['message' => "Some error occured while uploading the Image."], 500);
     }
 }

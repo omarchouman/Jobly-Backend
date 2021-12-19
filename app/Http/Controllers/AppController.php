@@ -67,7 +67,7 @@ class AppController extends Controller
         $contact->subject = $request->subject;
         $contact->message = $request->message;
         if ($contact->save()) {
-            return response()->json(['message' => 'Your query have been submitted. You will get reply soon!', 'status' => 'success']);
+            return response()->json(['message' => 'Your query has been submitted. You will get a reply soon!', 'status' => 'success']);
 
         } else {
             return response()->json(['message' => 'Sorry!! Some error occured while submiting your query.', 'status' => 'error']);

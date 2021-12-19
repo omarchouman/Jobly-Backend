@@ -67,7 +67,7 @@ class ApplicationController extends Controller
         if ($application) {
             $application->status = "canceled"; //canceled by user
             if ($application->save()) {
-                return response()->json(['message' => 'You have successfully canceled job.'], 200);
+                return response()->json(['message' => 'You have successfully canceled the job application.'], 200);
 
             } else {
 
@@ -115,7 +115,7 @@ class ApplicationController extends Controller
 
                 $jobseeker->notify(new ApplicationAcceptedNotification($data));
 
-                return response()->json(['message' => 'You maked this application accepted.'], 200);
+                return response()->json(['message' => 'You marked this application accepted.'], 200);
 
             } else {
 
@@ -125,7 +125,7 @@ class ApplicationController extends Controller
 
         } else {
             //logged in user dont have this job that is in app so can't update
-            return response()->json(['message' => $job_id.' Some error occured while changing status of application'], 500);
+            return response()->json(['message' => $job_id.' Some error occured while changing the status of the application'], 500);
 
         }
 
@@ -153,7 +153,7 @@ class ApplicationController extends Controller
         
             if ($application->save()) {
         
-                return response()->json(['message' => 'You maked this application rejected.'], 200);
+                return response()->json(['message' => 'You marked this application rejected.'], 200);
 
             } else {
 
@@ -214,17 +214,17 @@ class ApplicationController extends Controller
               
                 $request->user()->notify(new InterviewNotification($data));
               
-                return response()->json(['message' => 'You have called ' . $data["jobseeker_name"] . ' for the interview. Check your inbox for the inerview detail.'], 200);
+                return response()->json(['message' => 'You have called ' . $data["jobseeker_name"] . ' for the interview. Check your inbox for the inerview details.'], 200);
 
             } else {
 
-                return response()->json(['message' => 'Please Accept the application first before call for interview'], 500);
+                return response()->json(['message' => 'Please Accept the application first before calling for interview'], 500);
 
             }
 
         } else {
             //logged in user dont have this job that is in app so can't update
-            return response()->json(['message' => 'Some error occured while calling for the inerview'], 500);
+            return response()->json(['message' => 'Some error occured while calling for inerview'], 500);
 
         }
 

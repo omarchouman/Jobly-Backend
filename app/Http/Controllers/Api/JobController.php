@@ -143,9 +143,9 @@ class JobController extends Controller
 
         if ($job->save()) {
 
-            return response()->json(['data' => $job, 'message' => 'You have added new job.']);
+            return response()->json(['data' => $job, 'message' => 'You have added a new job.']);
         } else {
-            return response()->json(['message' => 'Failed to create new job.'], 500);
+            return response()->json(['message' => 'Failed to create a new job.'], 500);
 
         }
     }
@@ -186,9 +186,9 @@ class JobController extends Controller
 
         if ($job->save()) {
 
-            return response()->json(['data' => $job, 'message' => 'You have updated job data.']);
+            return response()->json(['data' => $job, 'message' => 'You have updated the job data.']);
         } else {
-            return response()->json(['message' => 'Failed to update job.'], 500);
+            return response()->json(['message' => 'Failed to update the job.'], 500);
 
         }
     }
@@ -200,9 +200,9 @@ class JobController extends Controller
         $job->status = 'deleted';
         if ($job->save()) {
 
-            return response()->json(['data' => $job, 'message' => 'You have deleted job.']);
+            return response()->json(['data' => $job, 'message' => 'You have deleted the job.']);
         } else {
-            return response()->json(['message' => 'Failed to delete job.'], 500);
+            return response()->json(['message' => 'Failed to delete the job.'], 500);
 
         }
     }
@@ -214,9 +214,9 @@ class JobController extends Controller
         $job->status = 'closed';
         if ($job->save()) {
 
-            return response()->json(['data' => $job, 'message' => 'You have updated job.']);
+            return response()->json(['data' => $job, 'message' => 'You have updated the job.']);
         } else {
-            return response()->json(['message' => 'Failed to delete job.'], 500);
+            return response()->json(['message' => 'Failed to delete the job.'], 500);
 
         }
 
@@ -229,9 +229,9 @@ class JobController extends Controller
         $job->status = 'active';
         if ($job->save()) {
 
-            return response()->json(['data' => $job, 'message' => 'You have updated job.']);
+            return response()->json(['data' => $job, 'message' => 'You have updated the job.']);
         } else {
-            return response()->json(['message' => 'Failed to delete job.'], 500);
+            return response()->json(['message' => 'Failed to delete the job.'], 500);
 
         }
     }

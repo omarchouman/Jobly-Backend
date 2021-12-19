@@ -12,7 +12,7 @@ class PageController extends Controller
         if ($page->first()) {
             return response()->json(['data' => $page]);
         }
-        return response()->json(['message' => 'Couln\'nt find page you requested'],404);
+        return response()->json(['message' => 'Couln\'nt find the page you requested'],404);
     }
 
 }
